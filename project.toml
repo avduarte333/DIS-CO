@@ -15,13 +15,13 @@ authors = [
 
 # Base dependencies (needed for any usage of your package)
 dependencies = [
-    "pandas==2.2.3",        # Matching installed version
-    "Pillow==10.4.0",       # Matching installed version
-    "tqdm==4.66.5",         # Matching installed version
-    "pydantic==2.9.2",      # Matching installed version
-    "datasets==3.0.1",      # Matching installed version
-    "httpx==0.27.2",        # Enforce httpx version
-    "openpyxl==3.1.5"       # Enforce openpyxl version
+    "pandas==2.2.3",        
+    "Pillow==10.4.0",       
+    "tqdm==4.66.5",         
+    "pydantic==2.9.2",      
+    "datasets==3.0.1",      
+    "httpx==0.27.2",        # Enforce httpx version -> may trigger compatibility issues with OpenAI if installing latest version
+    "openpyxl==3.1.5"       
 ]
 
 [project.optional-dependencies]

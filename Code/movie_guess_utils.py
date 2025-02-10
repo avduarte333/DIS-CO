@@ -118,7 +118,6 @@ class MovieGuessTask:
                 torch_dtype=torch.bfloat16,
                 attn_implementation="flash_attention_2",
                 device_map="auto",
-                cache_dir="/media/andrestorage"
             )
             self.processor = AutoProcessor.from_pretrained(f"Qwen/{self.model_name}")
             self.model_type = "qwen"
@@ -135,7 +134,6 @@ class MovieGuessTask:
                 f"meta-llama/{self.model_name}",
                 torch_dtype=torch.bfloat16,
                 device_map="auto",
-                cache_dir="/media/andrestorage"
             )
             self.processor = AutoProcessor.from_pretrained(f"meta-llama/{self.model_name}")
             self.model_type = "llama"
