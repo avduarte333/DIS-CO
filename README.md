@@ -12,8 +12,22 @@ DIS-CO is a method ...
 ## DIS-CO Example
 ⚠ Important: When using Gemini, ChatGPT, LLaMA 3.2 or any other model that requires an API key / HF Login Credentials, don't forget to add your own keys in the xxxxxxx.py file<br>
 
-```
-python dis-co-predictions.py --out_path <output directory path> --model_type <Gemini | ChatGPT> --movie_name <target movie name>
+```python
+from movie_guess_utils import MovieGuessTask
+
+task = MovieGuessTask(
+    model_name="gpt-4o-2024-08-06",
+    movie_option="full",
+    frame_type="main",
+    input_mode="single_image",
+    clean_llm_output=False,
+    results_base_folder="./results",
+    api_key="YOUR_API_KEY",
+    hf_auth_token="HF_ACCESS_TOKEN",
+)
+
+# Execute the movie guessing task.
+task.run()
 ```
 ---
 
