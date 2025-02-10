@@ -4,7 +4,8 @@ This is the official repository for the paper DIS-CO: Discovering Copyrighted Co
 
 DIS-CO is a method ...
 
-\<insert pipeline image here\>
+![DIS-CO](DISCO-Teaser.png)
+
 
 
 ---
