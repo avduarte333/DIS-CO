@@ -20,7 +20,8 @@ dependencies = [
     "tqdm==4.66.5",         # Matching installed version
     "pydantic==2.9.2",      # Matching installed version
     "datasets==3.0.1",      # Matching installed version
-    "httpx==0.27.2"         # Enforce httpx version
+    "httpx==0.27.2",        # Enforce httpx version
+    "openpyxl==3.1.5"       # Enforce openpyxl version
 ]
 
 [project.optional-dependencies]
