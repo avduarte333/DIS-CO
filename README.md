@@ -78,12 +78,12 @@ The MovieTection dataset is designed for image/caption-based question-answering,
 
 ### Dataset Structure 🚧
 The dataset consists of **14,000 frames** extracted from **100 movies**, categorized into:
-- **Suspect movies:** Released **before September 2023**, potentially included in model training. `Label` column = 1.
-- **Clean movies:** Released **after September 2023**, outside the models' training data cutoff. `Label` column = 0.
+- **Suspect movies:** Released *before* September 2023, **potentially** included **in training data**.
+- **Clean movies:** Released *after* September 2023, **outside** the models' **training data**.
 
 Each movie contains **140 frames**, classified into:
-- **Main Frames**: (i) Featuring key characters from the plot; (ii) Easily recognizable to viewers who saw the movie.
-- **Neutral Frames**: (i) Backgrounds, objects, or minor characters; (ii) Frames not easily tied to the movie's narrative.
+- **Main Frames**: Featuring key characters from the plot.
+- **Neutral Frames**: Backgrounds, objects, or minor characters.
 
 
 <p align="center">
