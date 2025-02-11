@@ -2,7 +2,7 @@
 
 This is the official repository for the paper DIS-CO: Discovering Copyrighted Content in VLMs Training Data by André V. Duarte, Xuandong Zhao, Arlindo L. Oliveira and Lei Li<br>
 
-DIS-CO is a method ...
+DIS-CO is a method designed to infer whether copyrighted content was included in the training data of vision-language models (VLMs). By querying models with frames from targeted copyrighted media and analyzing their free-form responses, DIS-CO can provide strong evidence of memorization while remaining applicable to both white-box and black-box models.
 
 <p align="center">
   <img src="DISCO-Teaser.png" width="60%">
@@ -44,7 +44,7 @@ Choose one of the following options:
 
 ## 🎬 Running DIS-CO
 
-To run the **movie guessing task**, fill the attributes of `run_movie_guess.py` accordingly:
+To run the **movie guessing task**, fill the attributes of `run_movie_guess.py` according to your needs:
 
 ```python
 from movie_guess_utils import MovieGuessTask
@@ -58,6 +58,7 @@ task = MovieGuessTask(
     results_base_folder="./results",
     api_key="YOUR_API_KEY",
     hf_auth_token="HF_ACCESS_TOKEN",
+    dataset = "DIS-CO/MovieTection"
 )
 
 # Execute the movie guessing task.
@@ -73,7 +74,7 @@ python Code/run_movie_guess.py
 
 ---
 
-## 📚 [MovieTection](https://huggingface.co/datasets/DIS-CO/MovieTection)
+## 🗄️ [MovieTection](https://huggingface.co/datasets/DIS-CO/MovieTection)
 The MovieTection dataset is designed for image/caption-based question-answering, where models predict the movie title given a frame or its corresponding textual description.
 
 ### Dataset Structure 🚧
@@ -92,34 +93,29 @@ Each movie contains **140 frames**, classified into:
 
 
 
-
-
-
-
-Each frame is also paired with a **detailed caption**, generated using the Qwen2-VL 7B model.
-
 The dataset is organized into the following columns:
-- `Movie`: \<...\>
-- `Frame_Type`: \<...\>
-- `Scene_Number`: \<...\>
-- `Shot_Number`: \<...\>
-- `Image_File`: \<...\>
-- `Caption`: \<...\>
-- `Label`: \<...\>
-- `Answer`: \<...\>
+
+- `Movie` - The title of the movie from which the frame was extracted.
+
+- `Frame_Type` - Categorization of the frame as either *Main* or *Neutral*.
+
+- `Scene_Number` - Identifier for the scene within the movie. Scenes group related frames together based on their narrative context.
+
+- `Shot_Number` - The identifier for the specific shot within a scene.
+
+- `Image_File` - The image file of the frame.
+
+- `Caption` - Detailed textual description of the frame, generated using Qwen2-VL 7B.
+
+- `Label` - Binary value indicating whether the movie is categorized as clean (0) or suspect (1).
+
+- `Answer` - List of acceptable movie title variations that should be considered correct when evaluating the model’s free-form responses.
 
 
 
 ---
-### 📖 MovieTection Alternative (Used for Baseline Methods)
-We also release the same corpus on a subset format containing 4 Movies only.
-
-
-
----
-### 🤝 Compatibility
-DIS-CO is compatible with any VLM with strong reasoning capabilities.<br>
-- In our code, we provide an implementation for Gemini and ChatGPT, but in fact, models like LLaMA-3, Mixtral 8x7B, or Command+R can also be used.<br>
+## 📁 [MovieTection_Mini](https://huggingface.co/datasets/DIS-CO/MovieTection_Mini) - Dataset Alternative
+This dataset is a compact subset of the full MovieTection dataset, containing only 4 movies instead of 100. It is designed for users who want to experiment with the benchmark without the need to download the entire dataset, making it a more lightweight alternative for testing.
 
 
 ---
