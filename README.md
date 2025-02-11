@@ -4,7 +4,9 @@ This is the official repository for the paper DIS-CO: Discovering Copyrighted Co
 
 DIS-CO is a method ...
 
-![DIS-CO](DISCO-Teaser.png)
+<p align="center">
+  <img src="DISCO-Teaser.png" width="60%">
+</p>
 
 
 
@@ -85,7 +87,7 @@ Each movie contains **140 frames**, classified into:
 
 
 <p align="center">
-  <img src="image_types_example.png" alt="Image 1" width="60%">
+  <img src="image_types_example.png" alt="Image 1" width="85%">
 </p>
 
 
