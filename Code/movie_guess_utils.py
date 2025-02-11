@@ -24,7 +24,7 @@ class MovieGuess(BaseModel):
 
 
 class MovieGuessTask:
-    def __init__(self, model_name, movie_option, frame_type, input_mode, clean_llm_output, results_base_folder, api_key, hf_auth_token):
+    def __init__(self, model_name, movie_option, frame_type, input_mode, clean_llm_output, results_base_folder, api_key, hf_auth_token, dataset):
         """
         Initializes the MovieGuessTask with configuration options.
         
@@ -73,7 +73,10 @@ class MovieGuessTask:
         self.initialize_model_client()
 
         # Load the dataset.
-        self.dataset = load_dataset("DIS-CO/MovieTection_Mini", split="train")
+        if dataset == "DIS-CO/MovieTection" or dataset == "DIS-CO/MovieTection_Mini":
+            self.dataset = load_dataset(dataset, split="train")
+        else:
+            raise ValueError("Unsupported dataset. Please use 'DIS-CO/MovieTection' or 'DIS-CO/MovieTection_Mini'.")
 
     def initialize_model_client(self):
         """

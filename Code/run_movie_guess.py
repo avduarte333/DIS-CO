@@ -1,20 +1,17 @@
 """
-run_movie_guess.py
+The purpose of this script is to configure and run the task by setting a few key parameters.
+All the underlying logic for processing the movies is encapsulated in the movie_guess_utils.py module.
 
-This is the main entry point for the movie guessing task. The purpose of this
-script is to configure and run the task by setting a few key parameters.
-All the underlying logic for processing the movies is encapsulated in the
-movie_guess_utils.py module.
 
 User-Defined Parameters:
 -------------------------
 model_name:
     - Controls which model will be used for the movie guessing task.
-    - Options include:
-        * "gpt-4o-2024-08-06" : OpenAI's GPT-4 model optimized for movie guessing.
+    - Current implementation allows for the following options:
+        * "gpt-4o-2024-08-06" : OpenAI's GPT-4o model.
         * "gemini-1.5-flash"  : Google's Gemini model.
-        * "Qwen2-VL-7B-Instruct": Qwen2 for visual-language tasks.
-        * "Llama-3.2-11B-Vision-Instruct": LLaMA 3.2 for vision-based tasks.
+        * "Qwen2-VL-7B-Instruct": Alibaba's Qwen2-VL model.
+        * "Llama-3.2-11B-Vision-Instruct": Meta's model.
 
 movie_option:
     - Determines which movie(s) will be processed.
@@ -25,8 +22,8 @@ movie_option:
 frame_type:
     - Specifies which type of frame from the movie should be processed.
     - Options include:
-        * "main"      : Process the primary frames.
-        * "neutral"   : Process neutral frames.
+        * "main"      : (i) Featuring key characters from the plot; (ii) Easily recognizable to viewers who saw the movie.
+        * "neutral"   : (i) Backgrounds, objects, or minor characters; (ii) Frames not easily tied to the movie's narrative.
 
 input_mode:
     - Selects the form of input for the task.
@@ -35,8 +32,8 @@ input_mode:
         * "single_caption" : Use a text caption as input.
 
 clean_llm_output:
-    - A boolean flag that controls whether the output of the language model
-      should be cleaned/refined by an additional API call.
+    - A flag that controls whether the output of the language model should be cleaned by an additional API call.
+    - Our experience shows that LLaMA-3.2 model outputs can be noisy, and this step can help improve the quality of the results.
     - Options:
         * True  : Perform additional cleaning of the LLM output.
         * False : Use the raw output from the primary model.
@@ -46,15 +43,16 @@ results_base_folder:
     - Example: "./results" creates (or uses) a folder named "results" in the project directory.
 
 api_key:
-    - Your API key for closed-source models or when using the cleaning step.
-    - Expect to provide either your OpenAI API key or Gemini API key here.
+    - Specify an API key when using closed-source models or when using the cleaning step.
+    - Expects either an OpenAI or Gemini API key. By default, OpenAI's API is used unless the inference model is Gemini.
 
 hf_auth_token:
-    - Your Hugging Face authentication token.
+    - Hugging Face authentication token.
     - Required when using LLaMA 3.2 models.
 
-After configuring these parameters as needed, simply run this script to
-execute the movie guessing task.
+dataset:
+    - The dataset to use for the task.
+    - Accepts DIS-CO/MovieTection or DIS-CO/MovieTection_Mini (a smaller version for users who want to experiment with the benchmark without downloading the full dataset).
 """
 
 from movie_guess_utils import MovieGuessTask
@@ -72,6 +70,7 @@ task = MovieGuessTask(
     results_base_folder="./results",
     api_key="YOUR_API_KEY",
     hf_auth_token="HF_ACCESS_TOKEN",
+    dataset = "DIS-CO/MovieTection_Mini"
 )
 
 # Execute the movie guessing task.
