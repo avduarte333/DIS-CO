@@ -83,9 +83,14 @@ Each movie contains **140 frames**, classified into:
 - **Main Frames**: (i) Featuring key characters from the plot; (ii) Easily recognizable to viewers who saw the movie.
 - **Neutral Frames**: (i) Backgrounds, objects, or minor characters; (ii) Frames not easily tied to the movie's narrative.
 
-| Main | Neutral |
-|---------|---------|
-| ![Alt Text](DISCO-Teaser.png) | ![Alt Text](DISCO-Teaser.png) |
+
+<p align="center">
+  <img src="image_types_example.png" alt="Image 1" width="60%">
+</p>
+
+
+
+
 
 
 
