@@ -30,9 +30,9 @@ conda activate disco_env
 
 Choose one of the following options:
 
-- **For a specific model (e.g., GPT-4o):**
+- **For a specific model (e.g., Gemini):**
   ```bash
-  pip install -e .[gpt]
+  pip install -e .[gemini]
   ```
 - **To install dependencies for all supported models:**
   ```bash

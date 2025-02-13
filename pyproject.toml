@@ -21,7 +21,8 @@ dependencies = [
     "pydantic==2.9.2",      
     "datasets==3.0.1",      
     "httpx==0.27.2",        # Enforce httpx version -> may trigger compatibility issues with OpenAI if installing latest version
-    "openpyxl==3.1.5"       
+    "openpyxl==3.1.5",
+    "openai==1.47.1",       
 ]
 
 [project.optional-dependencies]
@@ -30,11 +31,6 @@ dependencies = [
 # Gemini branch: uses Google's generative AI client.
 gemini = [
     "google-genai==1.0.0"
-]
-
-# GPT branch: uses OpenAI's client.
-gpt = [
-    "openai==1.47.1",
 ]
 
 # Qwen branch: requires Transformers, Torch, and qwen-vl-utils.
@@ -54,7 +50,6 @@ llama = [
 # An extra that combines all optional dependencies.
 all = [
     "google-genai==1.0.0",
-    "openai==1.47.1",
     "transformers==4.46.1",
     "torch==2.4.0",         # CUDA Version 11.6
     "qwen-vl-utils==0.0.8",
