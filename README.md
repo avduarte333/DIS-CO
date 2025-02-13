@@ -55,7 +55,6 @@ task = MovieGuessTask(
     frame_type="main",
     input_mode="single_image",
     clean_llm_output=False,
-    results_base_folder="./Results",
     api_key="YOUR_API_KEY",
     hf_auth_token="HF_ACCESS_TOKEN",
     dataset = "DIS-CO/MovieTection"

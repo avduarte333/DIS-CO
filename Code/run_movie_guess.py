@@ -40,7 +40,6 @@ clean_llm_output:
 
 results_base_folder:
     - Specifies the directory where the results (e.g., Excel files) will be saved.
-    - Example: "./results" creates (or uses) a folder named "results" in the project directory.
 
 api_key:
     - Specify an API key when using closed-source models or when using the cleaning step.
@@ -67,7 +66,6 @@ task = MovieGuessTask(
     frame_type="main",
     input_mode="single_image",
     clean_llm_output=False,
-    results_base_folder="./Results",
     api_key="YOUR_API_KEY",
     hf_auth_token="HF_ACCESS_TOKEN",
     dataset = "DIS-CO/MovieTection_Mini"
