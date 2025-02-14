@@ -41,39 +41,6 @@ Choose one of the following options:
 
 ---
 
-
-## 🎬 Running DIS-CO
-
-To run the **movie guessing task**, fill the attributes of `run_movie_guess.py` according to your needs:
-
-```python
-from movie_guess_utils import MovieGuessTask
-
-task = MovieGuessTask(
-    model_name="gpt-4o-2024-08-06",
-    movie_option="full",
-    frame_type="main",
-    input_mode="single_image",
-    clean_llm_output=False,
-    results_base_folder="./Results",
-    api_key="YOUR_API_KEY",
-    hf_auth_token="HF_ACCESS_TOKEN",
-    dataset = "DIS-CO/MovieTection"
-)
-
-# Execute the movie guessing task.
-task.run()
-```
-
-Once set up, launch the task with:
-
-```bash
-python Code/run_movie_guess.py
-```
-
-
----
-
 ## 🗄️ [MovieTection](https://huggingface.co/datasets/DIS-CO/MovieTection)
 The MovieTection dataset is designed for image/caption-based question-answering, where models predict the movie title given a frame or its corresponding textual description.
 
@@ -117,6 +84,63 @@ The dataset is organized into the following columns:
 ## 📁 [MovieTection_Mini](https://huggingface.co/datasets/DIS-CO/MovieTection_Mini) - Dataset Alternative
 This dataset is a compact subset of the full MovieTection dataset, containing only 4 movies instead of 100. It is designed for users who want to experiment with the benchmark without the need to download the entire dataset, making it a more lightweight alternative for testing.
 
+---
+
+
+
+## 🎬 Running DIS-CO
+
+### Obtaining Movie Predictions
+To run the **movie guessing task**, fill the attributes of `run_movie_guess.py` according to your needs:
+
+```python
+from movie_guess_utils import MovieGuessTask
+
+task = MovieGuessTask(
+    model_name="gpt-4o-2024-08-06",
+    movie_option="full",
+    frame_type="main",
+    input_mode="single_image",
+    clean_llm_output=False,
+    results_base_folder="./Results",
+    api_key="YOUR_API_KEY",
+    hf_auth_token="HF_ACCESS_TOKEN",
+    dataset = "DIS-CO/MovieTection"
+)
+
+# Execute the movie guessing task.
+task.run()
+```
+
+Once set up, launch the task with:
+
+```bash
+python Code/run_movie_guess.py
+```
+
+### Calculating Metrics
+Once we have obtained predictions for different movies, the next step is to evaluate the model's performance.<br>
+Note: If you only wish to replicate the DIS-CO results presented in Tables 2, 11, and 12, you can use the parameters provided in the code example.
+
+```python
+from metrics_utils import Metrics
+
+
+metrics = Metrics(
+    method="disco",
+    models=['gpt-4o-2024-08-06', 'gemini-1.5-pro', 'Llama-3.2-90B-Vision-Instruct', 'Qwen2-VL-72B-Instruct'],
+    dataset_name="DIS-CO/MovieTection",
+    results_base_folder="./Replicate_Results",
+    metrics_output_directory="./Metrics"
+)
+metrics.run() 
+```
+
+Once set up, launch the task with:
+
+```bash
+python Code/run_metrics.py
+```
 
 ---
 ## 💬 Citation
