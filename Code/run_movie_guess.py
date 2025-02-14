@@ -10,8 +10,8 @@ model_name:
     - Current implementation allows for the following options:
         * "gpt-4o-2024-08-06" : OpenAI's GPT-4o model.
         * "gemini-1.5-flash"  : Google's Gemini model.
-        * "Qwen2-VL-7B-Instruct": Alibaba's Qwen2-VL model.
-        * "Llama-3.2-11B-Vision-Instruct": Meta's model.
+        * "Qwen2-VL-7B-Instruct" or "Qwen2-VL-72B-Instruct": Alibaba's Qwen2-VL models.
+        * "Llama-3.2-11B-Vision-Instruct" or "Llama-3.2-90B-Vision-Instruct": Meta's models.
 
 movie_option:
     - Determines which movie(s) will be processed.
@@ -40,6 +40,7 @@ clean_llm_output:
 
 results_base_folder:
     - Specifies the directory where the results (e.g., Excel files) will be saved.
+    - Example: "./results" creates (or uses) a folder named "results" in the project directory.
 
 api_key:
     - Specify an API key when using closed-source models or when using the cleaning step.

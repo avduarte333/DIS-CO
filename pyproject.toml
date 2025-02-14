@@ -15,7 +15,9 @@ authors = [
 
 # Base dependencies (needed for any usage of your package)
 dependencies = [
-    "pandas==2.2.3",        
+    "pandas==2.2.3",
+    "numpy==1.26.4",
+    "scikit-learn==1.5.1",        
     "Pillow==10.4.0",       
     "tqdm==4.66.5",         
     "pydantic==2.9.2",      
