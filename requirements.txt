@@ -1,0 +1,27 @@
+# Base dependencies (needed for any usage of your package)
+pandas==2.2.3
+numpy==1.26.4
+scikit-learn==1.5.1
+Pillow==10.4.0
+tqdm==4.66.5
+pydantic==2.9.2
+datasets==3.0.1
+httpx==0.27.2  # Enforce httpx version -> may trigger compatibility issues with OpenAI if installing latest version
+openpyxl==3.1.5
+
+
+
+# GPT branch: uses OpenAI's client.
+openai==1.47.1  # Also required for cleaning LLM output
+
+
+# Gemini branch: uses Google's generative AI client.
+google-genai==1.0.0
+
+
+# Qwen and Llama branch: requires Transformers, Torch, qwen-vl-utils and Hugging Face Hub.
+transformers==4.46.1
+torch==2.4.0  # CUDA Version 11.6
+qwen-vl-utils==0.0.8
+huggingface-hub==0.25.1
+

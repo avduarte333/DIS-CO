@@ -28,16 +28,18 @@ conda activate disco_env
 
 ## 🔹 Installing Dependencies
 
-Choose one of the following options:
+You can install the necessary dependencies with the following command:
 
-- **For a specific model (e.g., Gemini):**
-  ```bash
-  pip install -e .[gemini]
-  ```
-- **To install dependencies for all supported models:**
-  ```bash
-  pip install -e .[all]
-  ```
+```bash
+pip install -r requirements.txt
+```
+
+- **To install dependencies for all supported models:**  
+  Run the command as is.
+
+- **To install dependencies for specific models only:**  
+  Open the `requirements.txt` file and comment out the sections corresponding to the models you don’t need. Each model's dependencies are clearly labeled with comments for easy identification.
+
 
 ---
 
