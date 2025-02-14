@@ -35,6 +35,9 @@ class MovieGuessTask:
             input_mode (str): "single_image" or "single_caption".
             clean_llm_output (bool): Whether to use a secondary cleaning API call.
             results_base_folder (str): Base folder to save the results.
+            api_key (str): API key for OpenAI or Gemini models.
+            hf_auth_token (str): Hugging Face authentication token for using LLaMA 3.2 models.
+            dataset (str): Dataset name (e.g., "DIS-CO/MovieTection" or "DIS-CO/MovieTection_Mini").
         """
         self.model_name = model_name
         self.movie_option = movie_option

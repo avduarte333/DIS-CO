@@ -97,15 +97,15 @@ To run the **movie guessing task**, fill the attributes of `run_movie_guess.py` 
 from movie_guess_utils import MovieGuessTask
 
 task = MovieGuessTask(
-    model_name="gpt-4o-2024-08-06",
-    movie_option="full",
-    frame_type="main",
-    input_mode="single_image",
-    clean_llm_output=False,
-    results_base_folder="./Results",
-    api_key="YOUR_API_KEY",
-    hf_auth_token="HF_ACCESS_TOKEN",
-    dataset = "DIS-CO/MovieTection"
+    model_name = "gpt-4o-2024-08-06",  # The model name to use
+    movie_option = "full",             # Either "full" to process all movies, or the name of a single movie.
+    frame_type = "main",               # The frame type (e.g., "main" or "neutral").
+    input_mode = "single_image",       # Expects "single_image" or "single_caption".
+    clean_llm_output = False,          # Whether to use a secondary cleaning API call.
+    results_base_folder = "./Results", # Base folder to save the results.
+    api_key = "YOUR_API_KEY",          # API key for OpenAI or Gemini models.
+    hf_auth_token = "HF_ACCESS_TOKEN", # Hugging Face authentication token - Required when using LLaMA 3.2 models.
+    dataset = "DIS-CO/MovieTection"    # Dataset name (e.g., "DIS-CO/MovieTection" or "DIS-CO/MovieTection_Mini").
 )
 
 # Execute the movie guessing task.
@@ -120,20 +120,26 @@ python Code/run_movie_guess.py
 
 ### Calculating Metrics
 Once we have obtained predictions for different movies, the next step is to evaluate the model's performance.<br>
-Note: If you only wish to replicate the DIS-CO results presented in Tables 2, 11, and 12, you can use the parameters provided in the code example.
+**Note**: If you only wish to replicate the DIS-CO results presented in Tables 2, 11, and 12, you can use the parameters provided in the code example.
 
 ```python
 from metrics_utils import Metrics
 
-
 metrics = Metrics(
-    method="disco",
-    models=['gpt-4o-2024-08-06', 'gemini-1.5-pro', 'Llama-3.2-90B-Vision-Instruct', 'Qwen2-VL-72B-Instruct'],
-    dataset_name="DIS-CO/MovieTection",
-    results_base_folder="./Replicate_Results",
-    metrics_output_directory="./Metrics"
+    method="disco",                             # Methods: "captions", "disco", or "disco_floor"
+    models=[                                    # List of model names
+        'gpt-4o-2024-08-06', 
+        'gemini-1.5-pro', 
+        'Llama-3.2-90B-Vision-Instruct', 
+        'Qwen2-VL-72B-Instruct'
+    ],                                          
+    dataset_name="DIS-CO/MovieTection",         # Dataset name (e.g., "DIS-CO/MovieTection" or "DIS-CO/MovieTection_Mini").
+    results_base_folder="./Replicate_Results",  # Path to the folder that contains the MovieGuessTask model outputs.
+    metrics_output_directory="./Metrics"        # Path to the folder where the metrics will be saved.
 )
-metrics.run() 
+
+metrics.run()
+
 ```
 
 Once set up, launch the task with:
