@@ -22,7 +22,6 @@ dependencies = [
     "datasets==3.0.1",      
     "httpx==0.27.2",        # Enforce httpx version -> may trigger compatibility issues with OpenAI if installing latest version
     "openpyxl==3.1.5",
-    "openai==1.47.1",       
 ]
 
 [project.optional-dependencies]
@@ -33,18 +32,25 @@ gemini = [
     "google-genai==1.0.0"
 ]
 
+# GPT branch: uses OpenAI's client.
+gpt = [
+    "openai==1.47.1",
+]
+
 # Qwen branch: requires Transformers, Torch, and qwen-vl-utils.
 qwen = [
     "transformers==4.46.1",
     "torch==2.4.0",         # CUDA Version 11.6
-    "qwen-vl-utils==0.0.8"
+    "qwen-vl-utils==0.0.8",
+    "openai==1.47.1", # Required for Cleaning LLM Output
 ]
 
 # Llama branch: requires Transformers, Torch, and Hugging Face Hub.
 llama = [
     "transformers==4.46.1",
     "torch==2.4.0",         # CUDA Version 11.6
-    "huggingface-hub==0.25.1"
+    "huggingface-hub==0.25.1",
+    "openai==1.47.1", # Required for Cleaning LLM Output
 ]
 
 # An extra that combines all optional dependencies.
@@ -53,5 +59,6 @@ all = [
     "transformers==4.46.1",
     "torch==2.4.0",         # CUDA Version 11.6
     "qwen-vl-utils==0.0.8",
-    "huggingface-hub==0.25.1"
+    "huggingface-hub==0.25.1",
+    "openai==1.47.1", # Required for Cleaning LLM Output
 ]
