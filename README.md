@@ -5,7 +5,7 @@ This is the official repository for the paper DIS-CO: Discovering Copyrighted Co
 DIS-CO is a method designed to infer whether copyrighted content was included in the training data of vision-language models (VLMs). By querying models with frames from targeted copyrighted media and analyzing their free-form responses, DIS-CO can provide strong evidence of memorization while remaining applicable to both white-box and black-box models.
 
 <p align="center">
-  <img src="DISCO-Teaser.png" width="60%">
+  <img src="./Images/DISCO-Teaser.png" width="60%">
 </p>
 
 
@@ -88,7 +88,7 @@ Each movie contains **140 frames**, classified into:
 
 
 <p align="center">
-  <img src="image_types_example.png" alt="Image 1" width="85%">
+  <img src="./Images/image_types_example.png" alt="Image 1" width="85%">
 </p>
 
 
