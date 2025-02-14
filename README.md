@@ -128,16 +128,16 @@ Once we have obtained predictions for different movies, the next step is to eval
 from metrics_utils import Metrics
 
 metrics = Metrics(
-    method="disco",                             # Methods: "captions", "disco", or "disco_floor"
-    models=[                                    # List of model names
+    method = "disco",                             # Methods: "captions", "disco", or "disco_floor"
+    models = [                                    # List of model names
         'gpt-4o-2024-08-06', 
         'gemini-1.5-pro', 
         'Llama-3.2-90B-Vision-Instruct', 
         'Qwen2-VL-72B-Instruct'
     ],                                          
-    dataset_name="DIS-CO/MovieTection",         # Dataset name (e.g., "DIS-CO/MovieTection" or "DIS-CO/MovieTection_Mini").
-    results_base_folder="./Replicate_Results",  # Path to the folder that contains the MovieGuessTask model outputs.
-    metrics_output_directory="./Metrics"        # Path to the folder where the metrics will be saved.
+    dataset_name = "DIS-CO/MovieTection",         # Dataset name (e.g., "DIS-CO/MovieTection" or "DIS-CO/MovieTection_Mini").
+    results_base_folder = "./Replicate_Results",  # Path to the folder that contains the MovieGuessTask model outputs.
+    metrics_output_directory = "./Metrics"        # Path to the folder where the metrics will be saved.
 )
 
 metrics.run()
