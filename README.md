@@ -1,9 +1,9 @@
 # DIS-CO 🪩
 
-This is the official repository for the paper DIS-CO: Discovering Copyrighted Content in VLMs Training Data by André V. Duarte, Xuandong Zhao, Arlindo L. Oliveira and Lei Li<br>
-[Website](https://avduarte333.github.io/projects/disco/) , [Paper](www.arxiv.com), [Data](https://huggingface.co/datasets/DIS-CO/MovieTection)
+This is the official repository for the paper DIS-CO: Discovering Copyrighted Content in VLMs Training Data by André V. Duarte, Xuandong Zhao, Arlindo L. Oliveira and Lei Li.<br>
+Explore the project here! [DIS-CO Blog](https://avduarte333.github.io/projects/disco/)
 
-<br>
+### Overview
 DIS-CO is a method designed to infer whether copyrighted content was included in the training data of vision-language models (VLMs). By querying models with frames from targeted copyrighted media and analyzing their free-form responses, DIS-CO can provide strong evidence of memorization while remaining applicable to both white-box and black-box models.
 
 <p align="center">
