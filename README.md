@@ -158,13 +158,13 @@ python Code/run_metrics.py
 If you find this work useful, please consider citing our paper:
 
 ```bibtex
-@misc{duarte_disco,
-      title={DIS-CO: Discovering Copyrighted Content in VLMs Training Data}, 
-      author={André V. Duarte and Xuandong Zhao, Arlindo L. Oliveira and Lei Li},
+@misc{duarte2025disco,
+      title={{DIS-CO: Discovering Copyrighted Content in VLMs Training Data}}, 
+      author={André V. Duarte and Xuandong Zhao and Arlindo L. Oliveira and Lei Li},
       year={2025},
-      eprint={xxxx.yyyyy},
+      eprint={2502.17358},
       archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/xxxx.yyyyy}, 
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2502.17358}, 
 }
 ```
