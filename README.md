@@ -158,13 +158,21 @@ python Code/run_metrics.py
 If you find this work useful, please consider citing our paper:
 
 ```bibtex
-@misc{duarte2025disco,
-      title={{DIS-CO: Discovering Copyrighted Content in VLMs Training Data}}, 
-      author={André V. Duarte and Xuandong Zhao and Arlindo L. Oliveira and Lei Li},
-      year={2025},
-      eprint={2502.17358},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2502.17358}, 
+@InProceedings{pmlr-v267-duarte25a,
+  title = 	 {{DIS}-{CO}: Discovering Copyrighted Content in {VLM}s Training Data},
+  author =       {Duarte, Andr\'{e} V. and Zhao, Xuandong and Oliveira, Arlindo L. and Li, Lei},
+  booktitle = 	 {Proceedings of the 42nd International Conference on Machine Learning},
+  pages = 	 {14807--14832},
+  year = 	 {2025},
+  editor = 	 {Singh, Aarti and Fazel, Maryam and Hsu, Daniel and Lacoste-Julien, Simon and Berkenkamp, Felix and Maharaj, Tegan and Wagstaff, Kiri and Zhu, Jerry},
+  volume = 	 {267},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {13--19 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {https://raw.githubusercontent.com/mlresearch/v267/main/assets/duarte25a/duarte25a.pdf},
+  url = 	 {https://proceedings.mlr.press/v267/duarte25a.html},
+  abstract = 	 {<em>How can we verify whether copyrighted content was used to train a large vision-language model (VLM) without direct access to its training data?</em> Motivated by the hypothesis that a VLM is able to recognize images from its training corpus, we propose DIS-CO, a novel approach to infer the inclusion of copyrighted content during the model’s development. By repeatedly querying a VLM with specific frames from targeted copyrighted material, DIS-CO extracts the content’s identity through free-form text completions. To assess its effectiveness, we introduce MovieTection, a benchmark comprising 14,000 frames paired with detailed captions, drawn from films released both before and after a model’s training cutoff. Our results show that DIS-CO significantly improves detection performance, nearly doubling the average AUC of the best prior method on models with logits available. Our findings also highlight a broader concern: all tested models appear to have been exposed to some extent to copyrighted content. We provide the code in the supplementary materials.}
 }
 ```
+
+
